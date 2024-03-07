@@ -1,0 +1,231 @@
+:root {
+    --DarkBrown: hsl(25, 47%, 15%);
+    --MediumBrown: hsl(28, 10%, 53%);
+    --Cream: hsl(27, 66%, 92%);
+    --VeryPaleOrange: hsl(33, 100%, 98%);
+    --SoftRed: hsl(10, 79%, 65%);
+    --softRedLight: hsla(10, 79%, 65%, 0.884);
+    --Cyan: hsl(186, 34%, 60%);
+    --cyanLight: hsla(186, 34%, 60%, 0.822);
+    --font: 18px;
+}
+
+* {
+    padding: 0;
+    margin: 0;
+    box-sizing: border-box;
+    font-family: 'DM Sans', sans-serif;
+}
+
+html, body {
+    height: 100%;
+}
+
+body {
+    background-color: var(--Cream);
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+}
+
+.chart {
+    display: flex;
+    flex-direction: column;
+    gap: 25px;
+}
+
+.chart-header, 
+.chart-body {
+    display: flex;
+    padding: 30px;
+    border-radius: 20px;
+    width: 540px;
+}
+
+.chart-header {
+    background: var(--SoftRed);
+    height: 120px;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+    color: #fff;
+}
+
+.chart-body {
+    flex-direction: column;
+    background: #fff;
+    gap: 35px;
+}
+
+hr {
+    border: 0.01px solid var(--MediumBrown);
+    font-weight: lighter;
+}
+
+.total-container {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.month {
+    text-align: right;
+}
+
+.month h5:first-of-type {
+    color: var(--MediumBrown);
+}
+
+.total h5 {
+    color: var(--MediumBrown);
+    font-weight: 400;
+    font-size: var(--font);
+}
+
+.chart-bar {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    margin-top: 30px;
+}
+
+.bar div{
+    position: relative;
+    width: 50px;
+    border-radius: 5px;
+    background: var(--SoftRed);
+    cursor: pointer;
+    transition: 0.2s all ease-in;
+}
+
+.bar {
+    display: flex;
+    flex-direction: row;
+    gap: 20px;
+    justify-content: space-between;
+    align-items: flex-end;
+}
+
+.bar div:hover {
+    background: var(--softRedLight);
+}
+
+.bar div:nth-child(1) {
+    height: 50px;
+}
+
+.bar div:nth-child(1):hover #one {
+    display: block;
+}
+
+.bar div:nth-child(2) {
+    height: 100px;
+}
+
+.bar div:nth-child(2):hover #two {
+    display: block;
+}
+
+.bar div:nth-child(3) {
+    height: 150px;
+    background: var(--Cyan);
+}
+
+.bar div:nth-child(3):hover #three {
+    background: var(--cyanLight);
+    display: block;
+}
+
+.bar div:nth-child(4) {
+    height: 89px;
+}
+
+.bar div:nth-child(4):hover #four{
+    display: block;
+}
+
+.bar div:nth-child(5) {
+    height: 65px;
+}
+
+.bar div:nth-child(5):hover #five{
+    display: block;
+}
+
+.bar div:nth-child(6) {
+    height: 122px;
+}
+
+.bar div:nth-child(6):hover #six{
+    display: block;
+}
+
+.bar div:nth-child(7) {
+    height: 70px;
+}
+
+.bar div:nth-child(7):hover #seven{
+    display: block;
+}
+
+
+.labels {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    color: var(--MediumBrown);
+    justify-content: space-between;
+    padding: 0 10px 0 10px;
+}
+
+.labels p {
+    align-content: center;
+}
+
+.tooltip {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 60px !important;
+    height: auto !important;
+    background: var(--DarkBrown) !important;
+    border-radius: 4px;
+    padding: 5px;
+    color: #fff;
+    top: -40px;
+    margin-left: -5px;
+}
+
+/* tooltip on hover for each bar */
+#one {
+    display: none;
+}
+#two {
+    display: none;
+}
+#three {
+    display: none;
+}
+#four {
+    display: none;
+}
+#five {
+    display: none;
+}
+#six {
+    display: none;
+}
+#seven {
+    display: none;
+}
+
+
+@media (max-width: 1000px){
+    .chart {
+        width: 100%;
+        padding-left: 15px;
+    }
+    
+}
